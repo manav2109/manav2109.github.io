@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.2b55cbb7.css",
-    "main.js": "/Portfolio/static/js/main.66741ad8.js",
-    "static/media/leaf.png": "/Portfolio/static/media/leaf.ff2616f664c8c0ceab91.png",
-    "static/media/emotion.png": "/Portfolio/static/media/emotion.eabfc16e7a146ab15778.png",
-    "static/media/suicide.png": "/Portfolio/static/media/suicide.9c86cd7138a398c45fa5.png",
-    "static/media/codeEditor.png": "/Portfolio/static/media/codeEditor.1b585492490c8c1cace9.png",
-    "static/media/blog.png": "/Portfolio/static/media/blog.fb8ab7f271a937d5fc01.png",
-    "static/media/manav-cv-5-8-2024.pdf": "/Portfolio/static/media/manav-cv-5-8-2024.03626ef67826f0b215b9.pdf",
-    "static/media/home-main.svg": "/Portfolio/static/media/home-main.359935c39288e92d4dba5c9f2445b91d.svg",
-    "static/media/about.png": "/Portfolio/static/media/about.aee0f771fbfc1e7b8fa8.png",
-    "static/media/chatify.png": "/Portfolio/static/media/chatify.7206044e0b5cdad44726.png",
-    "static/media/home-bg.jpg": "/Portfolio/static/media/home-bg.dc52d5d40a40b13154b0.jpg",
-    "static/media/avatar.svg": "/Portfolio/static/media/avatar.7f806e40d46fc76fbc3c4a3d71349951.svg",
-    "static/media/pre.svg": "/Portfolio/static/media/pre.4410c5baaa673cc131da.svg",
-    "index.html": "/Portfolio/index.html",
-    "main.2b55cbb7.css.map": "/Portfolio/static/css/main.2b55cbb7.css.map",
-    "main.66741ad8.js.map": "/Portfolio/static/js/main.66741ad8.js.map"
+    "main.css": "/static/css/main.bb34be5b.css",
+    "main.js": "/static/js/main.e2b20666.js",
+    "static/media/leaf.png": "/static/media/leaf.ff2616f664c8c0ceab91.png",
+    "static/media/emotion.png": "/static/media/emotion.eabfc16e7a146ab15778.png",
+    "static/media/suicide.png": "/static/media/suicide.9c86cd7138a398c45fa5.png",
+    "static/media/codeEditor.png": "/static/media/codeEditor.1b585492490c8c1cace9.png",
+    "static/media/blog.png": "/static/media/blog.fb8ab7f271a937d5fc01.png",
+    "static/media/manav-cv-5-8-2024.pdf": "/static/media/manav-cv-5-8-2024.03626ef67826f0b215b9.pdf",
+    "static/media/home-main.svg": "/static/media/home-main.359935c39288e92d4dba5c9f2445b91d.svg",
+    "static/media/about.png": "/static/media/about.aee0f771fbfc1e7b8fa8.png",
+    "static/media/chatify.png": "/static/media/chatify.7206044e0b5cdad44726.png",
+    "static/media/home-bg.jpg": "/static/media/home-bg.dc52d5d40a40b13154b0.jpg",
+    "static/media/avatar.svg": "/static/media/avatar.7f806e40d46fc76fbc3c4a3d71349951.svg",
+    "static/media/pre.svg": "/static/media/pre.4410c5baaa673cc131da.svg",
+    "index.html": "/index.html",
+    "main.bb34be5b.css.map": "/static/css/main.bb34be5b.css.map",
+    "main.e2b20666.js.map": "/static/js/main.e2b20666.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b55cbb7.css",
-    "static/js/main.66741ad8.js"
+    "static/css/main.bb34be5b.css",
+    "static/js/main.e2b20666.js"
   ]
 }
