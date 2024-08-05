@@ -2,6 +2,7 @@
   "name": "manav-portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://manav2109.github.io/portfolio",
   "dependencies": {
     "@react-pdf/renderer": "^2.2.0",
     "@testing-library/jest-dom": "^5.16.2",
@@ -32,7 +33,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@types/core-js": "2.5.8",
@@ -55,6 +58,7 @@
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-react": "7.34.1",
     "eslint-plugin-unused-imports": "2.0.0",
+    "gh-pages": "^6.1.1",
     "husky": "8.0.3",
     "patch-package": "6.5.1",
     "prettier": "2.8.8",
