@@ -10,7 +10,7 @@ function Projects() {
   return (
     <Container fluid className="project-section">
       <Particle />
-      <Container>
+      <Container style={{ width: '100%', maxWidth: '95vw' }}>
         <h1 className="project-heading">
           My Recent <strong className="purple">Works </strong>
         </h1>
