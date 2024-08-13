@@ -15,16 +15,16 @@ function Home2() {
   <h1 style={{ fontSize: "2.6em" }}>
     LET ME <span className="purple"> INTRODUCE </span> MYSELF
   </h1>
-  <Row className="row-about-section" id="about-row" style={{ marginLeft: '5%' }}>
+  <Row className="row-about-section" id="about-row" style={{ marginLeft: '5%', height: 'auto' }}>
   <Col 
   md={7} 
   className="home-about-description" 
   style={{ 
+    paddingTop:"-100px",
     display: 'flex', 
     justifyContent: 'center', 
     alignItems: 'center', 
     textAlign: 'center', 
-    height: '100vh' // Optional: Adjust height as needed
   }}
 >
   <p className="home-about-body">
