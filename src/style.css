@@ -305,10 +305,19 @@ button:focus {
   }
 }
 
-.myAvtar {
-  justify-content: center !important;
-  padding-top: 9em !important;
+.myAvtar img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  overflow: visible !important;
+  transform: none !important;
+  margin-top: 8%;
+  position: relative; /* Add this to enable z-index */
+  z-index: 10; /* Set a higher z-index value to bring it on top */
 }
+
+
 
 @media (max-width: 767px) {
   .myAvtar {
@@ -321,6 +330,7 @@ button:focus {
   position: relative;
   padding-bottom: 70px !important;
   padding-top: 70px !important;
+  color: white;
 }
 
 .home-about-description {
@@ -543,6 +553,10 @@ button:focus {
 /* --------- */
 /* About */
 /* --------- */
+
+.row-about-section {
+  margin-left: 20px; /* Adjust the value as needed */
+}
 
 .about-section {
   position: relative !important;
