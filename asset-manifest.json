@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.aebd623b.css",
-    "main.js": "/static/js/main.6187b38b.js",
+    "main.js": "/static/js/main.fbc936e1.js",
     "static/media/manav-cv-5-8-2024.pdf": "/static/media/manav-cv-5-8-2024.03626ef67826f0b215b9.pdf",
     "static/media/home-main.svg": "/static/media/home-main.359935c39288e92d4dba5c9f2445b91d.svg",
     "static/media/about.png": "/static/media/about.aee0f771fbfc1e7b8fa8.png",
@@ -15,10 +15,10 @@
     "static/media/bosler.svg": "/static/media/bosler.64fb6574d403d37a27117920d8e61a60.svg",
     "index.html": "/index.html",
     "main.aebd623b.css.map": "/static/css/main.aebd623b.css.map",
-    "main.6187b38b.js.map": "/static/js/main.6187b38b.js.map"
+    "main.fbc936e1.js.map": "/static/js/main.fbc936e1.js.map"
   },
   "entrypoints": [
     "static/css/main.aebd623b.css",
-    "static/js/main.6187b38b.js"
+    "static/js/main.fbc936e1.js"
   ]
 }
