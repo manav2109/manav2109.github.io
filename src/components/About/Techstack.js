@@ -1,10 +1,9 @@
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, OverlayTrigger, Tooltip } from "react-bootstrap";
 import {
   DiReact,
   DiNodejs,
   DiMongodb,
   DiPython,
-  DiGit,
   DiJava,
   DiDocker,
   DiGoogleCloudPlatform,
@@ -12,8 +11,6 @@ import {
   DiDjango 
 } from "react-icons/di";
 import {
-  SiRedis,
-  SiFirebase,
   SiPostgresql,
   SiAmazonaws,
   SiMicrosoftazure,
@@ -35,106 +32,55 @@ import { BsGitlab } from "react-icons/bs";
 import { FaGithub, FaCentos } from "react-icons/fa6";
 import { GoWorkflow } from "react-icons/go";
 import { FaUbuntu, FaWindows } from "react-icons/fa";
+
 function Techstack() {
+  const techs = [
+    { icon: <SiKalilinux />, name: "Kali Linux" },
+    { icon: <FaUbuntu />, name: "Ubuntu" },
+    { icon: <FaCentos />, name: "CentOS" },
+    { icon: <FaWindows />, name: "Windows" },
+    { icon: <SiVmware />, name: "VMware" },
+    { icon: <DiJava />, name: "Java" },
+    { icon: <DiPython />, name: "Python" },
+    { icon: <TbBrandJavascript />, name: "JavaScript" },
+    { icon: <TbBrandCSharp />, name: "C#" },
+    { icon: <DiReact />, name: "React" },
+    { icon: <SiSpringboot />, name: "Spring Boot" },
+    { icon: <SiFastapi />, name: "FastAPI" },
+    { icon: <SiFlask />, name: "Flask" },
+    { icon: <DiDjango />, name: "Django" },
+    { icon: <DiNodejs />, name: "Node.js" },
+    { icon: <DiGoogleCloudPlatform />, name: "Google Cloud Platform" },
+    { icon: <SiAmazonaws />, name: "AWS" },
+    { icon: <SiMicrosoftazure />, name: "Azure" },
+    { icon: <DiDocker />, name: "Docker" },
+    { icon: <BiLogoKubernetes />, name: "Kubernetes" },
+    { icon: <DiMysql />, name: "MySQL" },
+    { icon: <SiPostgresql />, name: "PostgreSQL" },
+    { icon: <SiOracle />, name: "Oracle" },
+    { icon: <DiMongodb />, name: "MongoDB" },
+    { icon: <BsGitlab />, name: "GitLab" },
+    { icon: <FaGithub />, name: "GitHub" },
+    { icon: <SiAzurepipelines />, name: "Azure Pipelines" },
+    { icon: <SiGithubactions />, name: "GitHub Actions" },
+    { icon: <GoWorkflow />, name: "Workflow" },
+    { icon: <SiYaml />, name: "YAML" },
+    { icon: <SiTestinglibrary />, name: "Testing Library" },
+    { icon: <SiVim />, name: "Vim" },
+  ];
+
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiKalilinux />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <FaUbuntu />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <FaCentos />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <FaWindows />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiVmware />
-      </Col>
-      
-      <Col xs={4} md={2} className="tech-icons">
-        <DiJava />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiPython />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <TbBrandJavascript />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <TbBrandCSharp />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiReact />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiSpringboot />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiFastapi />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiFlask />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiDjango />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-      <DiNodejs />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiGoogleCloudPlatform  />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiAmazonaws />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiMicrosoftazure />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiDocker />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <BiLogoKubernetes />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiMysql />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiPostgresql />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiOracle />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiMongodb />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <BsGitlab />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <FaGithub />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiAzurepipelines />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiGithubactions />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <GoWorkflow />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiYaml />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-      <SiTestinglibrary />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-      <SiVim />
-      </Col>
+      {techs.map((tech, index) => (
+        <Col xs={4} md={2} className="tech-icons" key={index}>
+          <OverlayTrigger
+            placement="top"
+            overlay={<Tooltip id={`tooltip-${index}`}>{tech.name}</Tooltip>}
+          >
+            <div>{tech.icon}</div>
+          </OverlayTrigger>
+        </Col>
+      ))}
     </Row>
   );
 }
