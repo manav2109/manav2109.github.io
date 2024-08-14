@@ -6,7 +6,8 @@
   <body>
     <script>
       var pathname = window.location.pathname;
-      window.location.replace('/manav2109.github.io' + pathname);
+      var newPathname = pathname.substring('/manav2109.github.io'.length);
+      window.location.replace('/manav2109.github.io/' + newPathname);
     </script>
   </body>
 </html>
