@@ -96,7 +96,7 @@ function Home2() {
   <img
     src={homeLogo}
     alt="home pic"
-    className="img-fluid"
+    className="img-fluid-home-logo"
     style={{ maxHeight: "500px" }}
   />
 </Col>
