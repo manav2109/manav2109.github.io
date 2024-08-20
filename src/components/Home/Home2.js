@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/home-main.svg";
+import "./Home.css"
 import {
   AiFillGithub,
   AiFillInstagram,
@@ -15,7 +16,7 @@ function Home2() {
     <Container fluid className="home-about-section" id="about">
       <Container>
         {/* Heading Section */}
-        <Row className="justify-content-center" style={{ marginBottom: "40px" }}>
+        <Row className="justify-content-center" style={{ marginTop:"-40px",marginBottom: "40px" }}>
           <Col md={12} className="text-center">
             <h1 style={{ fontSize: "2.6em", color: "white" }}>
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
@@ -27,8 +28,8 @@ function Home2() {
         <Row>
           <Col
             md={7} 
-            className="d-flex flex-column justify-content-center"
-            style={{ marginTop: "400px" }} // Reduced padding to balance space
+            className="d-flex flex-column justify-content-center responsive-margin"
+            style={{marginTop:"400px"}}
           >
             <p className="home-about-body">
               I fell in love with programming and I have at least learnt
