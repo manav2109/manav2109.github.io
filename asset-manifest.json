@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.3ca1f67b.css",
-    "main.js": "/static/js/main.d8e2fa36.js",
+    "main.css": "/static/css/main.bf08e911.css",
+    "main.js": "/static/js/main.95530337.js",
     "static/media/manav-cv-5-8-2024.pdf": "/static/media/manav-cv-5-8-2024.03626ef67826f0b215b9.pdf",
     "static/media/home-main.svg": "/static/media/home-main.359935c39288e92d4dba5c9f2445b91d.svg",
     "static/media/about.png": "/static/media/about.aee0f771fbfc1e7b8fa8.png",
@@ -14,11 +14,11 @@
     "static/media/pre.svg": "/static/media/pre.4410c5baaa673cc131da.svg",
     "static/media/bosler.svg": "/static/media/bosler.64fb6574d403d37a27117920d8e61a60.svg",
     "index.html": "/index.html",
-    "main.3ca1f67b.css.map": "/static/css/main.3ca1f67b.css.map",
-    "main.d8e2fa36.js.map": "/static/js/main.d8e2fa36.js.map"
+    "main.bf08e911.css.map": "/static/css/main.bf08e911.css.map",
+    "main.95530337.js.map": "/static/js/main.95530337.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ca1f67b.css",
-    "static/js/main.d8e2fa36.js"
+    "static/css/main.bf08e911.css",
+    "static/js/main.95530337.js"
   ]
 }
