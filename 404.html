@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>404 — Page Not Found · Manav Rathi</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,800;1,800&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;700&display=swap" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: #fff8e7;
+      color: #0a0a0a;
+      font-family: "IBM Plex Mono", monospace;
+      display: flex; align-items: center; justify-content: center;
+      padding: 32px;
+    }
+    .wrap { max-width: 720px; text-align: center; }
+    .stamp {
+      display: inline-block;
+      padding: 6px 14px;
+      background: #ffd400;
+      border: 3px solid #0a0a0a;
+      box-shadow: 4px 4px 0 #0a0a0a;
+      transform: rotate(-2deg);
+      font-family: "Archivo Black", sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      margin-bottom: 28px;
+    }
+    h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      font-weight: 800;
+      font-size: clamp(80px, 16vw, 180px);
+      line-height: 0.95;
+      margin: 0 0 18px;
+      letter-spacing: -0.04em;
+      background: linear-gradient(110deg, #ff7ae6 0%, #0033ff 30%, #79e4ff 55%, #b6ffb0 80%, #ffd400 100%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      animation: sweep 6s ease-in-out infinite;
+    }
+    @keyframes sweep { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    p {
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      font-size: 22px;
+      line-height: 1.5;
+      max-width: 540px;
+      margin: 0 auto 32px;
+      color: #1a1a1a;
+    }
+    a {
+      display: inline-block;
+      padding: 14px 26px;
+      background: #0a0a0a;
+      color: #fff8e7;
+      border: 4px solid #0a0a0a;
+      box-shadow: 8px 8px 0 #ff2e8b;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    a:hover { transform: translate(-3px,-3px); box-shadow: 11px 11px 0 #ff2e8b; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="stamp">VOL. V · ERR. 404</span>
+    <h1>404</h1>
+    <p>The presses ran, but this page was never set in type. Filed under <em>“lost dispatches.”</em></p>
+    <a href="/">← Back to the front page</a>
+  </div>
+</body>
+</html>

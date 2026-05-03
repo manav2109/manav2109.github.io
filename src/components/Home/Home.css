@@ -1,9 +1,0 @@
-.responsive-margin {
-    margin-top: 400px;
-  }
-
-@media (max-width: 900px) {
-    .responsive-margin {
-      margin-top: 250px !important;
-    }
-  }
