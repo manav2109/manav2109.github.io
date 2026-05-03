@@ -2,82 +2,77 @@
 
 Personal portfolio of **Manav Rathi** — Software Engineer · Cloud &amp; DevOps · SDET-II at Affle.
 
-🌐 Live: **[manav2109.github.io](https://manav2109.github.io)**
-
----
-
-## What this is
-
-A single self-contained static page in the **Chromatic Press** style — a deliberate fusion of three design languages:
-
-- **Editorial** — Fraunces serif, drop caps, magazine masthead, italic pull-quotes.
-- **Holographic** — WebGL fragment-shader portrait, hue-cycling text, holographic accents.
-- **Brutalist** — thick ink borders, hard offset shadows, rotated stamps, marquee tickers.
-
-Plus a custom **Warp Portal** cursor (three concentric SVG rings, gold center pip, smooth lerp positioning, holographic trail).
+Live at <https://manav2109.github.io/>.
 
 ## Stack
 
-| Layer | Choice |
-|---|---|
-| Page | One self-contained `index.html` |
-| Type | Fraunces · Archivo Black · Inter · IBM Plex Mono (Google Fonts) |
-| Visuals | Pure CSS + SVG + Canvas + WebGL (no build step, no dependencies) |
-| Hosting | GitHub Pages (`main` branch root) |
+- **Vite 5** + **React 18** + **TypeScript 5** (strict)
+- One global stylesheet (`src/styles/theme.css`) — design tokens + the full editorial / holographic / brutalist theme
+- WebGL holographic portrait + canvas-driven Warp Portal cursor + confetti
+- Zero runtime CSS frameworks, zero state libraries — vanilla `useEffect` and IntersectionObserver
+- Static deploy via **GitHub Actions → GitHub Pages**
 
-No JavaScript framework. No bundler. No build pipeline. The page ships exactly as you see it in source.
+## Getting started
 
-## Project structure
+```bash
+npm install
+npm run dev      # → http://127.0.0.1:5173
+npm run build    # → dist/
+npm run preview  # serve dist/ locally
+```
+
+## Project layout
 
 ```
 .
-├── index.html         ← the entire portfolio (single file)
-├── 404.html           ← branded 404 page
-├── assets/
-│   ├── favicon.svg    ← Warp Portal icon
-│   ├── apple-touch-icon.png
-│   └── og.png         ← OpenGraph share image
-├── favicon.ico
-├── robots.txt
-├── sitemap.xml
-├── .nojekyll          ← disables Jekyll on GitHub Pages
-└── README.md
+├── index.html                    Vite entry · meta · OG · JSON-LD
+├── public/                       static files (copied as-is)
+│   ├── favicon.ico · 404.html · robots.txt · sitemap.xml · .nojekyll
+│   └── assets/                   favicon.svg · apple-touch-icon · og.png
+├── src/
+│   ├── main.tsx                  React root
+│   ├── App.tsx                   page composition
+│   ├── types.ts                  TS interfaces
+│   ├── icons.tsx                 inline SVG social icons
+│   ├── styles/
+│   │   └── theme.css             the entire theme (~1.1k lines)
+│   ├── data/
+│   │   └── portfolio.ts          projects · career · stack · contacts · marquees
+│   ├── hooks/
+│   │   ├── useCountUp.ts         animated counter
+│   │   └── useReveal.ts          IntersectionObserver wrapper
+│   └── components/
+│       ├── WarpPortalCursor.tsx  cursor + holographic trail canvas
+│       ├── ConfettiCanvas.tsx    listens for `confetti-burst` event
+│       ├── HoloPortrait.tsx      WebGL metaball shader
+│       ├── Hero.tsx · StatCard.tsx
+│       ├── Masthead.tsx · Marquee.tsx · Footer.tsx · Reveal.tsx
+│       ├── About.tsx · Timeline.tsx · TechStack.tsx
+│       ├── Projects.tsx          horizontal scroll (wheel · drag · arrow keys)
+│       └── Credentials.tsx · Life.tsx · Contact.tsx
+└── .github/workflows/deploy.yml  build + deploy to Pages on push to main
 ```
 
-## Local preview
+## Deployment
 
-```bash
-# any static server works — pick one:
-python3 -m http.server 5173
-# then open http://127.0.0.1:5173/
-```
+Pushing to `main` triggers `.github/workflows/deploy.yml`:
 
-Or use `npx serve` / `live-server` / VS Code Live Server.
+1. `npm ci` and `npm run build`
+2. Upload `dist/` as a Pages artifact
+3. Deploy via `actions/deploy-pages@v4`
 
-## Deploy
+**One-time repo setting required:**
+`Settings → Pages → Build and deployment → Source: GitHub Actions`.
 
-Pushing to `main` is the deploy step.
+After that, every push to `main` auto-publishes.
 
-```bash
-git add .
-git commit -m "Update portfolio"
-git push origin main
-```
+## Design
 
-GitHub Pages serves from the `main` branch root. Settings → Pages → Source: `main` / `/ (root)`.
+A merge of editorial broadsheet, holographic foil, and neo-brutalist tech. Type
+pairs Fraunces (display serif) with Archivo Black (brutalist sans) and IBM Plex Mono
+(technical accent). Color tokens are defined as CSS custom properties at the top of
+`theme.css`.
 
-## Sections
+## License
 
-1. **Hero** — name, tagline, six stat cards
-2. **About** — magazine-style profile with drop cap + sticker side panel
-3. **Dispatch** — career timeline (Affle / Bosler / H&amp;M / Airbus)
-4. **Compositors' Notes** — full technology stack across 12 categories
-5. **Selected Work** — twelve shipping projects, horizontal scroll
-6. **Filed Papers** — certifications &amp; industries served
-7. **Outside the Office** — interests &amp; languages
-8. **Letters** — contact channels
-
----
-
-Set in *Fraunces*, **Archivo Black** &amp; `IBM Plex Mono`.
-Filed from Bahadurgarh / Worldwide.
+MIT © Manav Rathi

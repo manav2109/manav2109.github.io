@@ -15,13 +15,19 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 
-# Old build artefacts (defensive — this is now a static site)
+# Dependencies + build output
 node_modules/
-build/
 dist/
+build/
 coverage/
 .yarn/
 .pnp.*
+
+# Vite cache
+.vite/
+
+# TypeScript incremental build info
+*.tsbuildinfo
 
 # Cursor agent metadata
 .cursor/
