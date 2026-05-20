@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>404 — Page Not Found · Manav Rathi</title>
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <!-- SPA redirect: forward known app routes back into index.html -->
+  <script>
+    const known = ['/courses'];
+    if (known.some(r => window.location.pathname.startsWith(r))) {
+      sessionStorage.setItem('spa_redirect', window.location.pathname);
+      window.location.replace('/');
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,800;1,800&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;700&display=swap" />

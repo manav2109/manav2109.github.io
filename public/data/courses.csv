@@ -1,0 +1,5 @@
+id,title,description,accent,level,duration_hrs,price_inr,tags,payment_link
+1,Cloud-Native QA Engineering,"Design end-to-end test strategies for distributed systems running on AWS EKS — from unit to chaos.",#ff2e8b,Intermediate,8,4999,"AWS,EKS,Python,Pytest,K6",
+2,Observability from Zero to Production,"APM · metrics · distributed tracing · alerting — built on real ad-tech systems handling billions of events.",#2dd4bf,Intermediate,6,3999,"Datadog,Prometheus,Grafana,OpenTelemetry,PagerDuty",
+3,Kubernetes for Engineers,"EKS deployments · rolling updates · HPA · multi-region failover on live production traffic.",#0033ff,Advanced,10,5999,"Kubernetes,Helm,EKS,Terraform,ArgoCD",
+4,CI/CD That Actually Works,"GitHub Actions pipelines that gate production risk before it ships — not just green ticks.",#ffd400,Beginner,5,2999,"GitHub Actions,Docker,ArgoCD,OWASP,SonarQube",

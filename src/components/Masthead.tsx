@@ -1,28 +1,33 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-const NAV_ITEMS = [
-  { id: 'about',       label: 'ABOUT'     },
-  { id: 'experience',  label: 'CAREER'    },
-  { id: 'stack',       label: 'STACK'     },
-  { id: 'projects',    label: 'WORK'      },
-  { id: 'credentials', label: 'CERTS'     },
-  { id: 'contact',     label: 'HIRE ME ↗', cta: true },
+const SCROLL_ITEMS = [
+  { id: 'about',       label: 'ABOUT'  },
+  { id: 'experience',  label: 'CAREER' },
+  { id: 'stack',       label: 'STACK'  },
+  { id: 'projects',    label: 'WORK'   },
+  { id: 'credentials', label: 'CERTS'  },
 ] as const;
 
-export function Masthead() {
+interface Props {
+  activePage?: 'home' | 'courses';
+}
+
+export function Masthead({ activePage = 'home' }: Props) {
   const [open, setOpen] = useState(false);
 
-  // Lock body scroll while mobile menu is open
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [open]);
 
-  // Close menu and smoothly scroll to target section
-  const closeAndScroll = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const scrollTo = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setOpen(false);
-    // Wait for the menu slide-out transition (320ms) before scrolling
+    if (activePage !== 'home') {
+      window.location.href = `/#${id}`;
+      return;
+    }
     setTimeout(() => {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     }, 320);
@@ -32,55 +37,69 @@ export function Masthead() {
     <>
       <header className="masthead">
         <div className="masthead-inner">
+
+          {/* Left — brand */}
           <div className="masthead-title">
-            Manav <span className="holo-text">Rathi</span>
+            <Link to="/">Manav <span className="holo-text">Rathi</span></Link>
           </div>
 
-          {/* Desktop navigation */}
+          {/* Centre — nav links */}
           <nav className="masthead-nav" aria-label="Main navigation">
-            <a href="#about">ABOUT</a>
-            <a href="#experience">CAREER</a>
-            <a href="#stack">STACK</a>
-            <a href="#projects">WORK</a>
-            <a href="#contact" className="cta">HIRE ME ↗</a>
+            {SCROLL_ITEMS.map(({ id, label }) => (
+              <a key={id} href={`#${id}`} onClick={scrollTo(id)}>{label}</a>
+            ))}
+            <Link
+              to="/courses"
+              className={activePage === 'courses' ? 'nav-active' : ''}
+            >
+              COURSES
+            </Link>
           </nav>
 
-          {/* Hamburger button — mobile only */}
-          <button
-            className={`hamburger${open ? ' open' : ''}`}
-            onClick={() => setOpen((o) => !o)}
-            aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
-            aria-expanded={open}
-            aria-controls="mobile-nav"
-          >
-            <span aria-hidden="true" />
-            <span aria-hidden="true" />
-            <span aria-hidden="true" />
-          </button>
+          {/* Right — CTA + hamburger */}
+          <div className="masthead-right">
+            <a
+              href="#contact"
+              className="masthead-cta"
+              onClick={scrollTo('contact')}
+            >
+              HIRE ME ↗
+            </a>
+            <button
+              className={`hamburger${open ? ' open' : ''}`}
+              onClick={() => setOpen(o => !o)}
+              aria-label={open ? 'Close menu' : 'Open menu'}
+              aria-expanded={open}
+              aria-controls="mobile-nav"
+            >
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
+            </button>
+          </div>
+
         </div>
       </header>
 
-      {/* Mobile full-screen navigation overlay */}
+      {/* Mobile full-screen overlay */}
       <div
         id="mobile-nav"
         className={`mobile-menu${open ? ' open' : ''}`}
         aria-hidden={!open}
         role="dialog"
         aria-label="Navigation menu"
-        aria-modal={open ? true : undefined}
+        aria-modal={open ? 'true' : undefined}
       >
         <nav aria-label="Site navigation">
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={'cta' in item ? 'mobile-cta' : undefined}
-              onClick={closeAndScroll(item.id)}
-              tabIndex={open ? 0 : -1}
-            >
-              {item.label}
+          {SCROLL_ITEMS.map(({ id, label }) => (
+            <a key={id} href={`#${id}`} onClick={scrollTo(id)} tabIndex={open ? 0 : -1}>
+              {label}
             </a>
           ))}
+          <Link to="/courses" tabIndex={open ? 0 : -1}>COURSES</Link>
+          <a href="#contact" className="mobile-cta" onClick={scrollTo('contact')} tabIndex={open ? 0 : -1}>
+            HIRE ME ↗
+          </a>
         </nav>
       </div>
     </>
