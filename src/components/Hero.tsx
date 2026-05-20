@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { heroStats } from '../data/portfolio';
 import { HoloPortrait } from './HoloPortrait';
 import { StatCard } from './StatCard';
+import { track } from '../lib/analytics';
 
 export function Hero() {
   // Mirror the 700ms delay from the original page so the hero "rise" plays first.
@@ -39,11 +40,18 @@ export function Hero() {
             <strong>Bosler (France)</strong>, and India.
           </p>
           <div className="hero-actions">
-            <a className="btn primary" href="#projects">
+            <a className="btn primary" href="#projects"
+               onClick={() => track('cta_click', { button: 'see_work' })}>
               SEE THE WORK ↓
             </a>
-            <a className="btn secondary" href="#contact">
+            <a className="btn secondary" href="#contact"
+               onClick={() => track('cta_click', { button: 'hire_me' })}>
               GET IN TOUCH →
+            </a>
+            <a className="btn" href="/assets/ManavRathi_Resume.pdf"
+               download="ManavRathi_Resume.pdf"
+               onClick={() => track('cta_click', { button: 'download_cv' })}>
+              DOWNLOAD CV ↓
             </a>
           </div>
         </div>

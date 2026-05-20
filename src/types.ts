@@ -40,7 +40,7 @@ export interface ContactLink {
   lbl: string;
   val: string;
   href: string;
-  icon: 'mail' | 'whatsapp' | 'github' | 'linkedin' | 'phone' | 'instagram';
+  icon: 'mail' | 'whatsapp' | 'github' | 'linkedin' | 'phone' | 'instagram' | 'resume';
 }
 
 export interface HeroStat {

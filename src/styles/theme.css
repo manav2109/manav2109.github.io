@@ -185,6 +185,31 @@
     .masthead-nav a.cta { background: var(--ink); color: var(--cream); }
     .masthead-nav a.cta:hover { background: var(--pink); color: var(--cream); }
 
+    /* Hamburger — hidden on desktop, shown on mobile */
+    .hamburger { display: none; }
+
+    /* Mobile nav overlay — hidden until .open */
+    .mobile-menu {
+      display: none;
+      position: fixed; inset: 0; z-index: 49;
+      background: var(--cream);
+      transform: translateX(100%);
+      transition: transform 0.32s ease;
+      padding-top: 80px;
+    }
+    .mobile-menu.open { transform: translateX(0); }
+    .mobile-menu nav {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 24px; padding: 40px 24px;
+    }
+    .mobile-menu nav a {
+      font-family: var(--display); font-size: 22px; font-weight: 700;
+      letter-spacing: 0.12em; text-decoration: none; color: var(--ink);
+    }
+    .mobile-menu nav a.mobile-cta {
+      background: var(--ink); color: var(--cream); padding: 12px 28px;
+    }
+
     /* ---------- Layout primitive ---------- */
     .container { max-width: 1280px; margin: 0 auto; padding: 0 28px; }
     section { padding: 90px 0; }
@@ -1075,9 +1100,22 @@
 
     /* ---------- Responsive ---------- */
     @media (max-width: 880px) {
-      .masthead-inner { grid-template-columns: 1fr; gap: 6px; padding: 10px 18px; }
+      .masthead-inner { grid-template-columns: 1fr auto; gap: 6px; padding: 10px 18px; }
       .masthead-title { grid-column: 1; }
       .masthead-nav { display: none; }
+      .mobile-menu { display: block; }
+      .hamburger {
+        display: flex; flex-direction: column; justify-content: space-between;
+        grid-column: 2; width: 28px; height: 20px;
+        background: none; border: none; cursor: pointer; padding: 0; z-index: 51;
+      }
+      .hamburger span {
+        display: block; width: 100%; height: 2px; background: var(--ink);
+        transition: transform 0.3s, opacity 0.3s;
+      }
+      .hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+      .hamburger.open span:nth-child(2) { opacity: 0; }
+      .hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
       .container { padding: 0 18px; }
       .hero-grid { grid-template-columns: 1fr; gap: 28px; }
       .portrait-frame { margin: 0 auto; max-width: 280px; }

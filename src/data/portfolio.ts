@@ -363,4 +363,5 @@ export const contact: ContactLink[] = [
   { lbl: 'GitHub',    val: 'manav2109',              href: 'https://github.com/manav2109',                 icon: 'github' },
   { lbl: 'LinkedIn',  val: 'manavdex21',             href: 'https://www.linkedin.com/in/manavdex21/',      icon: 'linkedin' },
   { lbl: 'Instagram', val: '@mxnxv_rxthx',           href: 'https://www.instagram.com/mxnxv_rxthx',        icon: 'instagram' },
+  { lbl: 'Résumé',    val: 'Download PDF ↓',          href: '/assets/ManavRathi_Resume.pdf',                icon: 'resume' },
 ];

@@ -1,5 +1,6 @@
 import { Reveal } from './Reveal';
 import { career } from '../data/portfolio';
+import { sanitizeOwnHtml } from '../utils/html';
 import type { CareerRow, SubRole } from '../types';
 
 function TimelineRow({ row }: { row: CareerRow }) {
@@ -16,8 +17,8 @@ function TimelineRow({ row }: { row: CareerRow }) {
           <em>{row.blurb}</em>
         </p>
         <ul>
-          {row.bullets.map((b, i) => (
-            <li key={i} dangerouslySetInnerHTML={{ __html: b }} />
+          {row.bullets.map((b) => (
+            <li key={b.slice(0, 40)} dangerouslySetInnerHTML={{ __html: sanitizeOwnHtml(b) }} />
           ))}
         </ul>
         {row.subRoles && row.subRoles.length > 0 && (
@@ -29,7 +30,7 @@ function TimelineRow({ row }: { row: CareerRow }) {
                 </h4>
                 <p
                   style={{ margin: 0, fontSize: '13.5px', lineHeight: 1.6 }}
-                  dangerouslySetInnerHTML={{ __html: sub.body }}
+                  dangerouslySetInnerHTML={{ __html: sanitizeOwnHtml(sub.body) }}
                 />
               </div>
             ))}

@@ -3,6 +3,8 @@ import { Reveal } from './Reveal';
 import { projects } from '../data/portfolio';
 import { useCountUp } from '../hooks/useCountUp';
 import { useReveal } from '../hooks/useReveal';
+import { sanitizeOwnHtml } from '../utils/html';
+import { track } from '../lib/analytics';
 import type { Project, MetricChip } from '../types';
 
 function ProjectMetric({ metric, start }: { metric: MetricChip; start: boolean }) {
@@ -17,6 +19,9 @@ function ProjectMetric({ metric, start }: { metric: MetricChip; start: boolean }
 
 function ProjectCard({ project }: { project: Project }) {
   const [ref, inView] = useReveal<HTMLElement>({ threshold: 0.18 });
+  useEffect(() => {
+    if (inView) track('project_view', { project_name: project.name });
+  }, [inView, project.name]);
   return (
     <article ref={ref} className={`pcard${inView ? ' in' : ''}`}>
       <div className="head">
@@ -26,7 +31,7 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
       <span className="role">{project.title}</span>
-      <p className="desc" dangerouslySetInnerHTML={{ __html: project.description }} />
+      <p className="desc" dangerouslySetInnerHTML={{ __html: sanitizeOwnHtml(project.description) }} />
       <div className="pull">"{project.pull}"</div>
       <div className="tags">
         {project.techStack.map((t) => (

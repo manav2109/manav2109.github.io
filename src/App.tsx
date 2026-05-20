@@ -1,3 +1,4 @@
+import { Analytics } from './components/Analytics';
 import { ConfettiCanvas } from './components/ConfettiCanvas';
 import { WarpPortalCursor } from './components/WarpPortalCursor';
 import { Marquee } from './components/Marquee';
@@ -17,6 +18,7 @@ import './styles/theme.css';
 export default function App() {
   return (
     <>
+      <Analytics />
       <ConfettiCanvas />
       <WarpPortalCursor />
 

@@ -2,6 +2,7 @@ import { Reveal } from './Reveal';
 import { contact } from '../data/portfolio';
 import { ContactIcon } from '../icons';
 import { useReveal } from '../hooks/useReveal';
+import { track } from '../lib/analytics';
 
 interface RowProps {
   href: string;
@@ -21,6 +22,7 @@ function ContactRow({ href, icon, lbl, val, delay }: RowProps) {
       target="_blank"
       rel="noopener noreferrer"
       style={{ transitionDelay: `${delay}ms` }}
+      onClick={() => track('contact_click', { channel: lbl.toLowerCase() })}
     >
       <ContactIcon name={icon} />
       <div className="lab">{lbl}</div>
