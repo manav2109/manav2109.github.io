@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const SCROLL_ITEMS = [
-  { id: 'about',       label: 'ABOUT'  },
-  { id: 'experience',  label: 'CAREER' },
-  { id: 'stack',       label: 'STACK'  },
-  { id: 'projects',    label: 'WORK'   },
-  { id: 'credentials', label: 'CERTS'  },
+const NAV_ITEMS = [
+  { id: 'about',  label: 'ABOUT'  },
+  { id: 'career', label: 'CAREER' },
+  { id: 'stack',  label: 'STACK'  },
+  { id: 'work',   label: 'WORK'   },
+  { id: 'certs',  label: 'CERTS'  },
 ] as const;
 
+type NavId = typeof NAV_ITEMS[number]['id'];
+
 interface Props {
-  activePage?: 'home' | 'courses';
+  activePage?: NavId | 'home' | 'courses';
 }
 
 export function Masthead({ activePage = 'home' }: Props) {
@@ -21,17 +23,7 @@ export function Masthead({ activePage = 'home' }: Props) {
     return () => { document.body.style.overflow = ''; };
   }, [open]);
 
-  const scrollTo = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    setOpen(false);
-    if (activePage !== 'home') {
-      window.location.href = `/#${id}`;
-      return;
-    }
-    setTimeout(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-    }, 320);
-  };
+  const close = () => setOpen(false);
 
   return (
     <>
@@ -40,31 +32,28 @@ export function Masthead({ activePage = 'home' }: Props) {
 
           {/* Left — brand */}
           <div className="masthead-title">
-            <Link to="/">Manav <span className="holo-text">Rathi</span></Link>
+            <Link to="/" onClick={close}>Manav <span className="holo-text">Rathi</span></Link>
           </div>
 
           {/* Centre — nav links */}
           <nav className="masthead-nav" aria-label="Main navigation">
-            {SCROLL_ITEMS.map(({ id, label }) => (
-              <a key={id} href={`#${id}`} onClick={scrollTo(id)}>{label}</a>
+            {NAV_ITEMS.map(({ id, label }) => (
+              <Link
+                key={id}
+                to={`/${id}`}
+                className={activePage === id ? 'nav-active' : ''}
+              >
+                {label}
+              </Link>
             ))}
-            <Link
-              to="/courses"
-              className={activePage === 'courses' ? 'nav-active' : ''}
-            >
+            <Link to="/courses" className={activePage === 'courses' ? 'nav-active' : ''}>
               COURSES
             </Link>
           </nav>
 
           {/* Right — CTA + hamburger */}
           <div className="masthead-right">
-            <a
-              href="#contact"
-              className="masthead-cta"
-              onClick={scrollTo('contact')}
-            >
-              HIRE ME ↗
-            </a>
+            <Link to="/about#contact" className="masthead-cta">HIRE ME ↗</Link>
             <button
               className={`hamburger${open ? ' open' : ''}`}
               onClick={() => setOpen(o => !o)}
@@ -91,15 +80,15 @@ export function Masthead({ activePage = 'home' }: Props) {
         aria-modal={open ? 'true' : undefined}
       >
         <nav aria-label="Site navigation">
-          {SCROLL_ITEMS.map(({ id, label }) => (
-            <a key={id} href={`#${id}`} onClick={scrollTo(id)} tabIndex={open ? 0 : -1}>
+          {NAV_ITEMS.map(({ id, label }) => (
+            <Link key={id} to={`/${id}`} tabIndex={open ? 0 : -1} onClick={close}>
               {label}
-            </a>
+            </Link>
           ))}
-          <Link to="/courses" tabIndex={open ? 0 : -1}>COURSES</Link>
-          <a href="#contact" className="mobile-cta" onClick={scrollTo('contact')} tabIndex={open ? 0 : -1}>
+          <Link to="/courses" tabIndex={open ? 0 : -1} onClick={close}>COURSES</Link>
+          <Link to="/about#contact" className="mobile-cta" tabIndex={open ? 0 : -1} onClick={close}>
             HIRE ME ↗
-          </a>
+          </Link>
         </nav>
       </div>
     </>

@@ -359,7 +359,7 @@ export const languages: { name: string; level: string }[] = [
 
 export const contact: ContactLink[] = [
   { lbl: 'Email',     val: 'manavdex21@gmail.com',   href: 'mailto:manavdex21@gmail.com',                  icon: 'mail' },
-  { lbl: 'WhatsApp',  val: '+91 87082 00465',        href: 'https://wa.me/918708200465',                   icon: 'whatsapp' },
+  { lbl: 'WhatsApp',  val: '+91 7027801416',          href: 'https://wa.me/917027801416',                   icon: 'whatsapp' },
   { lbl: 'GitHub',    val: 'manav2109',              href: 'https://github.com/manav2109',                 icon: 'github' },
   { lbl: 'LinkedIn',  val: 'manavdex21',             href: 'https://www.linkedin.com/in/manavdex21/',      icon: 'linkedin' },
   { lbl: 'Instagram', val: '@mxnxv_rxthx',           href: 'https://www.instagram.com/mxnxv_rxthx',        icon: 'instagram' },

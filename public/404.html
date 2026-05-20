@@ -7,7 +7,7 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <!-- SPA redirect: forward known app routes back into index.html -->
   <script>
-    const known = ['/courses'];
+    const known = ['/courses', '/about', '/career', '/stack', '/work', '/certs'];
     if (known.some(r => window.location.pathname.startsWith(r))) {
       sessionStorage.setItem('spa_redirect', window.location.pathname);
       window.location.replace('/');

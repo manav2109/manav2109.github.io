@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { heroStats } from '../data/portfolio';
 import { HoloPortrait } from './HoloPortrait';
 import { StatCard } from './StatCard';
@@ -40,14 +41,14 @@ export function Hero() {
             <strong>Bosler (France)</strong>, and India.
           </p>
           <div className="hero-actions">
-            <a className="btn primary" href="#projects"
+            <Link className="btn primary" to="/work"
                onClick={() => track('cta_click', { button: 'see_work' })}>
-              SEE THE WORK ↓
-            </a>
-            <a className="btn secondary" href="#contact"
+              SEE THE WORK →
+            </Link>
+            <Link className="btn secondary" to="/about#contact"
                onClick={() => track('cta_click', { button: 'hire_me' })}>
               GET IN TOUCH →
-            </a>
+            </Link>
             <a className="btn" href="/assets/ManavRathi_Resume.pdf"
                download="ManavRathi_Resume.pdf"
                onClick={() => track('cta_click', { button: 'download_cv' })}>
