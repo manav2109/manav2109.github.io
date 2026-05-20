@@ -70,15 +70,15 @@ export function Masthead() {
         aria-modal={open ? true : undefined}
       >
         <nav aria-label="Site navigation">
-          {NAV_ITEMS.map(({ id, label, cta }) => (
+          {NAV_ITEMS.map((item) => (
             <a
-              key={id}
-              href={`#${id}`}
-              className={cta ? 'mobile-cta' : undefined}
-              onClick={closeAndScroll(id)}
+              key={item.id}
+              href={`#${item.id}`}
+              className={'cta' in item ? 'mobile-cta' : undefined}
+              onClick={closeAndScroll(item.id)}
               tabIndex={open ? 0 : -1}
             >
-              {label}
+              {item.label}
             </a>
           ))}
         </nav>
