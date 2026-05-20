@@ -1139,6 +1139,8 @@
       .tline-when { padding-top: 0; }
       .timeline::before { left: 22px; }
       .tline-row::before { left: 13px; }
+      .course-hero { grid-template-columns: 1fr; }
+      .course-hero-right { display: none; }
       .course-grid { grid-template-columns: 1fr; }
       .course-notify-inner { grid-template-columns: 1fr; gap: 40px; }
       .course-stats { flex-wrap: wrap; }
@@ -1154,10 +1156,44 @@
       max-width: 1280px; margin: 0 auto;
       padding: 80px 28px 64px;
       border-bottom: 3px solid var(--ink);
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 60px;
+      align-items: center;
     }
+    .course-hero-right {
+      display: flex; align-items: center; justify-content: center;
+    }
+    .course-deck {
+      position: relative; width: 360px; height: 280px;
+    }
+    .course-deck-card {
+      position: absolute;
+      width: 270px;
+      border: 3px solid var(--ink);
+      background: var(--cream);
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .cdc-1 { top: 0;   left: 0;   z-index: 4; box-shadow: 9px 9px 0 var(--ink); transform: rotate(-5deg); }
+    .cdc-2 { top: 22px; left: 26px; z-index: 3; box-shadow: 8px 8px 0 var(--ink); transform: rotate(2.5deg); }
+    .cdc-3 { top: 44px; left: 52px; z-index: 2; box-shadow: 7px 7px 0 var(--ink); transform: rotate(-2deg); }
+    .cdc-4 { top: 66px; left: 78px; z-index: 1; box-shadow: 6px 6px 0 var(--ink); transform: rotate(3.5deg); }
+    .course-deck-card:hover { transform: rotate(0) translate(-6px,-6px) !important; z-index: 10; box-shadow: 14px 14px 0 var(--ink) !important; }
+    .cdc-accent { height: 7px; flex-shrink: 0; }
+    .cdc-body { padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+    .cdc-num { font-family: var(--mono); font-size: 10px; opacity: 0.3; letter-spacing: 0.12em; }
+    .cdc-title { font-family: var(--serif); font-size: 15px; font-weight: 900; line-height: 1.2; }
+    .cdc-hrs { font-family: var(--display); font-size: 9px; letter-spacing: 0.14em; opacity: 0.55; margin-top: 4px; }
     .course-hero-title {
       font-family: var(--serif); font-size: clamp(52px,8vw,96px);
       font-weight: 900; line-height: 1; margin-bottom: 20px;
+    }
+    .course-hero-title em.holo {
+      font-style: italic;
+      background: var(--gradient-holo); background-size: 220% 100%;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      animation: holoSweep 9s ease-in-out infinite;
     }
     .course-hero-sub {
       font-family: var(--mono); font-size: 15px; line-height: 1.7;
@@ -1170,6 +1206,10 @@
       padding: 14px 28px; border-right: 3px solid var(--ink); text-align: center;
     }
     .course-stat:last-child { border-right: none; }
+    .course-stat:nth-child(1) { background: var(--gold); }
+    .course-stat:nth-child(2) { background: var(--pink);   color: var(--cream); }
+    .course-stat:nth-child(3) { background: var(--cobalt); color: var(--cream); }
+    .course-stat:nth-child(4) { background: var(--ink);    color: var(--cream); }
     .course-stat-num {
       font-family: var(--display); font-size: 28px; line-height: 1; display: block;
     }
@@ -1223,7 +1263,21 @@
       box-shadow: var(--shadow-sm); transition: all 0.15s; cursor: pointer;
     }
     .course-cta:hover { transform: translate(-3px,-3px); box-shadow: var(--shadow); background: var(--cobalt); }
-    .course-cta-disabled { opacity: 0.3; pointer-events: none; }
+    .course-cta-disabled {
+      background: var(--cream-2); color: var(--ink); border-color: var(--ink);
+      box-shadow: none; opacity: 0.55; pointer-events: none; cursor: default;
+    }
+
+    .course-soon-stamp {
+      position: absolute; top: 14px; right: 16px; z-index: 2;
+      padding: 4px 10px;
+      background: var(--gold);
+      border: 2px solid var(--ink);
+      box-shadow: 3px 3px 0 var(--ink);
+      font-family: var(--display); font-size: 9px; letter-spacing: 0.2em;
+      transform: rotate(2deg);
+      pointer-events: none;
+    }
 
     .course-overlay {
       position: absolute; inset: 0;

@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { Masthead } from '../components/Masthead';
+import { Marquee } from '../components/Marquee';
 import { Footer } from '../components/Footer';
 import { courses, MARKETPLACE_ENABLED, totalHours } from '../data/courses';
+import { marqueeTop } from '../data/portfolio';
 import type { Course } from '../data/courses';
 
 const LEVEL_CLASS: Record<Course['level'], string> = {
@@ -16,15 +18,10 @@ function CourseCard({ course, index }: { course: Course; index: number }) {
 
   return (
     <article className={`course-card${index % 2 === 0 ? '' : ' course-card-alt'}`}>
-      {!MARKETPLACE_ENABLED && (
-        <div className="course-overlay">
-          <span className="course-overlay-icon">🔒</span>
-          <span className="course-overlay-label">Coming Soon</span>
-          <span className="course-overlay-sub">Enrollments open shortly</span>
-        </div>
-      )}
-
       <div className="course-accent" style={{ background: course.accent }} />
+      {!MARKETPLACE_ENABLED && (
+        <span className="course-soon-stamp">SOON</span>
+      )}
 
       <div className="course-body">
         <div className="course-meta">
@@ -50,7 +47,7 @@ function CourseCard({ course, index }: { course: Course; index: number }) {
           ENROLL NOW ↗
         </a>
       ) : (
-        <span className="course-cta course-cta-disabled">ENROLL NOW ↗</span>
+        <span className="course-cta course-cta-disabled">COMING SOON</span>
       )}
     </article>
   );
@@ -65,30 +62,47 @@ export function Courses() {
 
   return (
     <>
+      <Marquee items={marqueeTop} />
       <Masthead activePage="courses" />
 
       <section className="course-hero">
-        <span className="s-eyebrow">[ VIII · COURSES ]</span>
-        <h1 className="course-hero-title">
-          Learn from the<br />
-          <em className="holo">trenches.</em>
-        </h1>
-        <p className="course-hero-sub">
-          Not theory. Real systems. Real tradeoffs.<br />
-          Real production scars — distilled into curriculum.
-        </p>
-        <div className="course-stats">
-          {[
-            { num: courses.length,           lbl: 'Courses'        },
-            { num: `${totalHours} HRS`,      lbl: 'Total Content'  },
-            { num: '5+',                     lbl: 'Yrs Production' },
-            { num: MARKETPLACE_ENABLED ? 'LIVE ✓' : 'SOON', lbl: 'Status' },
-          ].map(s => (
-            <div key={s.lbl} className="course-stat">
-              <span className="course-stat-num">{s.num}</span>
-              <span className="course-stat-lbl">{s.lbl}</span>
-            </div>
-          ))}
+        <div className="course-hero-left">
+          <span className="s-eyebrow">[ VIII · COURSES ]</span>
+          <h1 className="course-hero-title">
+            Learn from the<br />
+            <em className="holo">trenches.</em>
+          </h1>
+          <p className="course-hero-sub">
+            Not theory. Real systems. Real tradeoffs.<br />
+            Real production scars — distilled into curriculum.
+          </p>
+          <div className="course-stats">
+            {[
+              { num: courses.length,           lbl: 'Courses'        },
+              { num: `${totalHours} HRS`,      lbl: 'Total Content'  },
+              { num: '5+',                     lbl: 'Yrs Production' },
+              { num: MARKETPLACE_ENABLED ? 'LIVE ✓' : 'SOON', lbl: 'Status' },
+            ].map(s => (
+              <div key={s.lbl} className="course-stat">
+                <span className="course-stat-num">{s.num}</span>
+                <span className="course-stat-lbl">{s.lbl}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="course-hero-right">
+          <div className="course-deck">
+            {courses.map((c, i) => (
+              <div key={c.id} className={`course-deck-card cdc-${i + 1}`}>
+                <div className="cdc-accent" style={{ background: c.accent }} />
+                <div className="cdc-body">
+                  <span className="cdc-num">0{c.id}</span>
+                  <span className="cdc-title">{c.title}</span>
+                  <span className="cdc-hrs">{c.duration_hrs} HRS</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
