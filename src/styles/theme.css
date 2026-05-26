@@ -707,6 +707,17 @@
       color: var(--cream);
     }
     .tline-card .sub-role h4.pink { background: var(--pink); }
+    .tline-card .sub-role ul {
+      margin: 6px 0 0;
+      padding-left: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .tline-card .sub-role li {
+      font-size: 13px;
+      line-height: 1.55;
+    }
 
     /* ---------- TECH STACK GRID ---------- */
     .stack-grid {
@@ -952,6 +963,26 @@
       font-size: 14.5px;
       line-height: 1.65;
       margin: 0;
+    }
+    .pcard .desc ul {
+      margin: 8px 0 6px;
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .pcard .desc li {
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .pcard .desc em {
+      font-style: normal;
+      font-weight: 700;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      opacity: 0.6;
     }
     .pcard .pull {
       font-family: var(--serif);

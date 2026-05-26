@@ -28,7 +28,7 @@ function TimelineRow({ row }: { row: CareerRow }) {
                 <h4 className={sub.variant === 'pink' ? 'pink' : ''}>
                   {sub.name}
                 </h4>
-                <p
+                <div
                   style={{ margin: 0, fontSize: '13.5px', lineHeight: 1.6 }}
                   dangerouslySetInnerHTML={{ __html: sanitizeOwnHtml(sub.body) }}
                 />

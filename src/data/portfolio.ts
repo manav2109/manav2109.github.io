@@ -25,6 +25,8 @@ export const marqueeTop: string[] = [
   'TRAINED LLAMA 3B (UNSLOTH + OLLAMA)',
   'TERRAFORM · ANSIBLE · JENKINS · ARGOCD',
   'OBSERVABILITY BY DESIGN',
+  '85% SYNTHETIC API COST ↓ · YAML + EKS',
+  'AWS DEVICE FARM · REAL-DEVICE AD CREATIVE AUTOMATION',
   'OPEN TO REMOTE · OPEN TO RELOCATION',
 ];
 
@@ -36,6 +38,8 @@ export const marqueeBottom: string[] = [
   'EDITORIAL × HOLOGRAPHIC × BRUTALIST',
   '2 YEARS HANDS-ON CENTRIC8 PLM',
   '50% DEPLOY TIME ↓ AT AIRBUS · AZURE DEVOPS',
+  'AI CLOUD OBSERVER · HUMAN-IN-THE-LOOP APPROVAL MODEL',
+  'LOCUST · K6 · LOAD TESTING MEDIASMART · CTV.AI · YOUAPPI',
   'FILED FROM BAHADURGARH / WORLDWIDE',
 ];
 
@@ -47,16 +51,15 @@ export const career: CareerRow[] = [
     company: 'Affle 3i',
     blurb: 'Consumer-intelligence & mobile-advertising platform.',
     bullets: [
-      'Driving the <strong>Observability initiative</strong> — analysing &amp; right-sizing cloud infrastructure costs across the platform; identifying redundancies and reducing operational spend.',
-      'Integrating <strong>APM tooling</strong> for logs &amp; monitoring across the YouAppi platform — improving visibility into system health and performance.',
-      'Writing <strong>Python + Java</strong> automations for <strong>production risk mitigation</strong> — reducing manual intervention and improving platform reliability.',
-      'Conducting codebase reviews focused on <strong>code quality, test coverage and scalability</strong> across backend services.',
+      'Driving the <strong>YouAppi observability initiative</strong> — Datadog APM rollout, YAML-driven synthetic monitoring on EKS, and real-device creative automation on AWS Device Farm; all results surfaced in Grafana via Prometheus.',
+      'Spanning two product lines (<strong>YouAppi + Jampp</strong>) — refactoring test architectures, scaling coverage, running <strong>Locust</strong> + <strong>k6</strong> load campaigns across Mediasmart, CTV.AI and YouAppi BUs, and conducting Java + Python codebase reviews.',
+      'Maintaining <strong>CI/CD infrastructure</strong> — Docker pipelines, Helm charts, EKS pod configs, Jenkins, Bitbucket Pipelines and GitHub Actions; authoring docs across Confluence, Drawio, Jira and Miro.',
     ],
     subRoles: [
       {
         name: '↳ YouAppi · Jan 2026 – Present',
         range: '',
-        body: 'Mobile-DSP observability &amp; cost optimisation; APM rollout; Python/Java production-risk automations.',
+        body: '<ul><li><strong>Datadog APM</strong> — distributed tracing, log correlation, service-map visibility; audited and reduced alert noise end-to-end.</li><li><strong>Synthetic Monitor</strong> — YAML-configured test cases; S3 hot-reload (no restart on config change); HTTP/TCP/SSL checks on EKS pods; AlertManager → Slack; Prometheus + Grafana. Replaced Datadog Synthetics — <strong>85% API cost cut</strong>.</li><li><strong>Creative Automation</strong> — FastAPI + Appium on AWS Device Farm public real devices; iOS via MacOS/Xcode direct-connect; bid-win confirmed via Elasticsearch <code>bid_response_id</code>; results in Grafana via Prometheus queue.</li><li><strong>AI Agents</strong> — cloud-environment observer with human-in-the-loop (MiTM) approval gate before execution; information-retrieval agent for team self-service.</li><li><strong>VictOps</strong> — on-call routing for high-severity incidents; maintained SLO coverage across risky deployments.</li><li><strong>Locust</strong> + <strong>k6</strong> load testing for Mediasmart, CTV.AI and YouAppi BUs.</li><li><strong>AI tooling</strong> — <strong>Claude</strong>, <strong>Cursor</strong> &amp; <strong>Kiro</strong> as daily pair-programmers for architecture and code generation; <strong>Copilot</strong> &amp; <strong>Codex</strong> for in-editor completion; <strong>ChatGPT</strong>, <strong>Gemini GEMS</strong> &amp; <strong>NotebookLM</strong> for knowledge synthesis and runbook deep-dives.</li></ul>',
         variant: 'cobalt',
       },
       {
@@ -132,15 +135,15 @@ export const techStack: StackCategory[] = [
   },
   {
     title: 'Monitoring & Observability',
-    chips: ['ELK Stack', 'Prometheus', 'Grafana', 'Splunk', 'Datadog', 'Filebeat', 'Metricbeat', 'APM'],
+    chips: ['ELK Stack', 'Prometheus', 'Grafana', 'Splunk', 'Datadog', 'AlertManager', 'VictOps', 'Filebeat', 'Metricbeat', 'APM'],
   },
   {
     title: 'Testing',
-    chips: ['PyTest', 'SpecFlow', 'jUnit', 'nUnit', 'Gherkin', 'Unittest', 'Appium', 'UIAutomator'],
+    chips: ['PyTest', 'SpecFlow', 'jUnit', 'nUnit', 'Gherkin', 'Unittest', 'Appium', 'UIAutomator', 'Locust', 'k6', 'AWS Device Farm'],
   },
   {
     title: 'AI & LLM Tools',
-    chips: ['Claude', 'CoPilot', 'Gemini', 'ChatGPT', 'NotebookLM', 'Deepseek', 'Kiro', 'unSloth', 'Ollama', 'LLaMA', 'Prompt Engg.', 'Model Tuning'],
+    chips: ['Claude', 'Cursor', 'Kiro', 'CoPilot', 'Codex', 'ChatGPT', 'Gemini GEMS', 'NotebookLM', 'Deepseek', 'unSloth', 'Ollama', 'LLaMA', 'Prompt Engg.', 'Model Tuning'],
   },
   {
     title: 'Security & Identity',
@@ -164,17 +167,45 @@ export const projects: Project[] = [
   {
     logo: 'YA',
     name: 'YouAppi',
-    title: 'SDET-II · Observability & QA Platform — Affle, India',
+    title: 'SDET-II · Observability Initiative — Affle, India',
     description:
-      'Driving the Observability initiative across Affle\'s mobile-DSP. Designing and deploying QA + monitoring systems on AWS EKS — an async synthetic monitoring agent (HTTP/TCP/SSL health checks with S3 hot-reload, 85% API cost reduction) and an SSP test-automation platform on real AWS Device Farm devices with Elasticsearch verification and FastAPI orchestration. APM rollout for logs &amp; monitoring; Python + Java automations for production-risk mitigation; codebase reviews focused on quality, coverage, scalability.',
-    techStack: ['Python', 'Java', 'FastAPI', 'Appium', 'AWS EKS', 'Helm', 'Prometheus', 'Grafana', 'Elasticsearch', 'APM', 'Bitbucket CI'],
+      '<strong>Datadog APM</strong> rollout with full alert-noise audit across the YouAppi mobile-DSP stack. <strong>VictOps</strong> on-call routing for high-severity incidents. <strong>Locust</strong> + <strong>k6</strong> load &amp; performance campaigns for Mediasmart, CTV.AI and YouAppi BUs. AI-augmented daily workflow — <strong>Claude</strong>, <strong>Cursor</strong>, <strong>Kiro</strong>, <strong>Copilot</strong>, <strong>Codex</strong>, <strong>ChatGPT</strong>, <strong>Gemini GEMS</strong> and <strong>NotebookLM</strong> embedded across research, development and debugging.',
+    techStack: ['Python', 'Datadog', 'AWS EKS', 'Helm', 'Prometheus', 'Grafana', 'VictOps', 'Locust', 'k6', 'Bitbucket CI', 'Claude', 'Cursor', 'Kiro', 'Copilot', 'Codex', 'ChatGPT', 'Gemini GEMS', 'NotebookLM'],
+    metrics: [
+      { value: 85,  suffix: '%', label: 'Synthetic API Cost ↓' },
+      { value: 2,                label: 'Tools Built on EKS' },
+      { value: 3,                label: 'BUs Load Tested' },
+      { value: 8,                label: 'AI Tools in Loop' },
+    ],
+    pull: 'Observability first. Zero guessing. Eight AI tools embedded in the loop.',
+  },
+  {
+    logo: 'SM',
+    name: 'SynMon',
+    title: 'Synthetic Monitor Agent · YouAppi — AWS EKS',
+    description:
+      'YAML-configured test cases with S3 hot-reload — config changes take effect without a pod restart. HTTP/TCP/SSL health checks run continuously on EKS pods; conditions defined in YAML trigger <strong>AlertManager</strong> fan-out to Slack channels; <strong>Prometheus</strong> metrics flow into <strong>Grafana</strong> dashboards for full observability. Built to replace Datadog Synthetic Monitors entirely — cutting Synthetic API spend by <strong>85%</strong>. Python service, Helm-deployed on EKS, zero-downtime config changes.',
+    techStack: ['Python', 'AWS EKS', 'Helm', 'S3', 'Prometheus', 'Grafana', 'AlertManager', 'Datadog', 'YAML', 'Slack', 'Bitbucket CI', 'Claude', 'Cursor', 'Kiro'],
+    metrics: [
+      { value: 85, suffix: '%', label: 'Synthetic API Cost ↓' },
+      { value: 3,               label: 'Check Types (HTTP·TCP·SSL)' },
+      { value: 0,               label: 'Restart on Config Change' },
+    ],
+    pull: 'YAML in S3. Checks on EKS. Alerts to Slack. No Datadog invoice.',
+  },
+  {
+    logo: 'CA',
+    name: 'CreativeQ',
+    title: 'SSP Creative Automation · AWS Device Farm + Appium',
+    description:
+      'Python <strong>FastAPI</strong> orchestrator driving <strong>Appium</strong> sessions on AWS Device Farm public real devices — across creative types and sizes for SSP demo apps. iOS handled via <strong>MacOS/Xcode</strong> direct-connect because Device Farm doesn\'t allow session login for app installation. Ad-win verified end-to-end via <strong>Elasticsearch</strong> <code>bid_response_id</code> object. All run results pushed to <strong>Grafana</strong> via Prometheus queue — full creative-run visibility across all SSPs.',
+    techStack: ['Python', 'FastAPI', 'Appium', 'AWS Device Farm', 'Elasticsearch', 'Prometheus', 'Grafana', 'Xcode', 'iOS', 'MacOS', 'Bitbucket CI'],
     metrics: [
       { value: 185, suffix: '+', label: 'Test Cases' },
       { value: 5,                label: 'SSPs Covered' },
-      { value: 85,  suffix: '%', label: 'API Cost ↓' },
-      { value: 2,                label: 'Live Systems' },
+      { value: 2,                label: 'Platforms (Android + iOS)' },
     ],
-    pull: 'Two production systems, one observability stack. OIDC federation killed every static AWS key.',
+    pull: 'Real devices. Real ad calls. bid_response_id in Elasticsearch as proof.',
   },
   {
     logo: 'JP',

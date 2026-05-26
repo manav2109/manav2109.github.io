@@ -9,8 +9,8 @@ const SIDE_ROWS: Array<[string, string]> = [
   ['Writes', 'Python · Java · C# · JS · Shell'],
   ['Frameworks', 'FastAPI · Spring Boot · Flask · React · Next.js'],
   ['Ships to', 'EKS · GKE · OpenShift · On-prem K8s'],
-  ['Watches with', 'ELK · Prom · Grafana · Splunk'],
-  ['Tests with', 'PyTest · SpecFlow · jUnit · nUnit'],
+  ['Watches with', 'Datadog · ELK · Prom · Grafana · Splunk'],
+  ['Tests with', 'PyTest · Appium · Locust · k6 · jUnit'],
   ['Speaks', 'English · Hindi (fluent)'],
   ['Plays', 'Snooker (positional) · Hikes · Runs'],
 ];
@@ -19,8 +19,8 @@ const SIDE_CHIPS = [
   'Terraform', 'Helm', 'Kubernetes',
   'Ansible', 'Jenkins', 'ArgoCD',
   'FastAPI', 'Spring Boot', 'RabbitMQ',
-  'PostgreSQL', 'Cassandra', 'Snowflake',
-  'LLaMA', 'unSloth', 'Hyperledger',
+  'PostgreSQL', 'Cassandra', 'Datadog',
+  'Locust', 'k6', 'LLaMA', 'Hyperledger',
 ];
 
 export function About() {
@@ -55,10 +55,14 @@ export function About() {
             <p>
               I fell in love with programming and never stopped building things that actually{' '}
               <strong>work in production</strong>. Currently <strong>SDET-II at Affle</strong> on the{' '}
-              <strong>YouAppi</strong> and <strong>Jampp</strong> platforms — driving the
-              observability initiative, integrating <strong>APM tooling</strong> for logs &amp;
-              monitoring, automating production-risk mitigation in Python and Java, and right-sizing
-              cloud spend across an ad-tech engine that processes{' '}
+              <strong>YouAppi</strong> and <strong>Jampp</strong> platforms — leading the observability
+              initiative: <strong>Datadog APM</strong> rollout with alert-noise audit across the stack;
+              a <strong>YAML-driven synthetic monitoring agent</strong> on EKS (S3 hot-reload ·
+              AlertManager → Slack · 85% Synthetic API cost cut); and a{' '}
+              <strong>real-device creative-automation platform</strong> on AWS Device Farm using Appium,
+              with iOS handled via MacOS/Xcode direct-connect and ad-wins verified through{' '}
+              <strong>Elasticsearch bid_response_id</strong> — results surfaced in Grafana via a
+              Prometheus queue. All of this across an ad-tech engine that processes{' '}
               <strong>billions of requests a day</strong>.
             </p>
             <p>
@@ -87,8 +91,18 @@ export function About() {
               email triage, built a <strong>multi-cloud Python CLI</strong> spanning
               GCP/AWS/Azure/Heroku/K8s, automated <strong>full GKE &amp; EKS</strong> infrastructure
               in Terraform, and architected a{' '}
-              <strong>fleet-managed ELK stack with auto-renewing Let's Encrypt SSL</strong>. Based
-              in Delhi.
+              <strong>fleet-managed ELK stack with auto-renewing Let's Encrypt SSL</strong>.
+            </p>
+            <p>
+              I run an <strong>AI-augmented engineering loop</strong> every day —{' '}
+              <strong>Claude</strong>, <strong>Cursor</strong> and <strong>Kiro</strong> as active
+              pair-programmers for architecture thinking and code generation;{' '}
+              <strong>GitHub Copilot</strong> and <strong>Codex</strong> for in-editor completion
+              and refactoring; <strong>ChatGPT</strong> and <strong>Gemini GEMS</strong> for rapid
+              knowledge synthesis and cross-referencing docs;{' '}
+              <strong>NotebookLM</strong> for structured deep-dives into technical papers and
+              runbooks. These are embedded in how I research, write, debug and ship — not novelties.
+              Based in Delhi.
             </p>
           </div>
           <aside
