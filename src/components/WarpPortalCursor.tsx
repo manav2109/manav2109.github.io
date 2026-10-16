@@ -12,6 +12,11 @@ export function WarpPortalCursor() {
     const cursor = cursorRef.current;
     const trail = trailRef.current;
     if (!cursor || !trail) return;
+
+    const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!fine || reduced) return;
+
     const ctx = trail.getContext('2d');
     if (!ctx) return;
 
